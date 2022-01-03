@@ -17,10 +17,11 @@
 # Release name
 PRODUCT_RELEASE_NAME := sagit
 
-$(call inherit-product, build/target/product/embedded.mk)
+# Inherit from sagit device
+$(call inherit-product, device/xiaomi/sagit/device.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
@@ -28,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := sagit
-PRODUCT_NAME := omni_sagit
+PRODUCT_NAME := twrp_sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
 PRODUCT_MANUFACTURER := Xiaomi
