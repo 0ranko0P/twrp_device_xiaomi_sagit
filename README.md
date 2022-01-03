@@ -1,7 +1,12 @@
 # android_device_xiaomi_sagit
 Tree for building TWRP for Xiaomi MI 6
 
+## Note
+Only compatible with Android 11 and newer
+
 ## To compile
+
+repo init --depth=1 -b twrp-11 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
 
 . build/envsetup.sh && lunch twrp_sagit-eng
 
