@@ -1,16 +1,12 @@
 # android_device_xiaomi_sagit
-Tree for building TWRP for Xiaomi MI 6
+Tree for building SHRP for Xiaomi MI 6
 
 ## Note
 Only compatible with Android 11 and newer
 
 ## To compile
 
-repo init --depth=1 -b twrp-11 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-
-. build/envsetup.sh && lunch twrp_sagit-eng
-
-mka adbd recoveryimage
+Refer: [SHRP guide](https://shrp.github.io/#/guide?id=android-11)
 
 ## Device specifications
 
@@ -30,7 +26,3 @@ Rear Camera  | Dual 12 MP (27mm, f/1.8, OIS 4-axis & 52mm, f/2.6), phase detecti
 ## Device picture
 
 ![Xiaomi Mi 6](https://xiaomi-mi.com/uploads/CatalogueImage/xiaomi-mi-6-exclusive-edition-6gb128gb-dual-sim-ceramic-black-01_15554_1492602917.jpg "Xiaomi Mi 6 in black")
-
-## Kernel Source
-
-https://github.com/Miccia94/kernel_xiaomi_msm8998/tree/twrp

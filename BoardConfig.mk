@@ -1,6 +1,8 @@
 #
 # Copyright 2022 The Android Open Source Project
 #
+# Copyright (C) 2022 SkyHawk Recovery Project
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -119,3 +121,41 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_THEME := portrait_hdpi
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone5/temp
+
+# SHRP specific build flags
+SHRP_PATH := $(DEVICE_PATH)
+SHRP_MAINTAINER := 0Ranko0P
+SHRP_DEVICE_CODE := Sagit
+SHRP_EDL_MODE := 0
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+SHRP_CUSTOM_FLASHLIGHT := true
+SHRP_FONP_1 := /sys/class/leds/led:torch_0/brightness
+SHRP_FONP_2 := /sys/class/leds/led:torch_1/brightness
+SHRP_FONP_3 := /sys/class/leds/led:switch_0/brightness
+SHRP_FLASH_MAX_BRIGHTNESS := 200
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+SHRP_REC_TYPE := SAR
+SHRP_DEVICE_TYPE := A_Only
+SHRP_STATUSBAR_RIGHT_PADDING := 40
+SHRP_STATUSBAR_LEFT_PADDING := 40
+SHRP_EXPRESS := true
+SHRP_EXPRESS_USE_DATA := true
+
+##################################
+# SHRP DEFAULT ADDONS - OPTIONAL #
+##################################
+
+# Including Magisk into recovery ramdisk
+INC_IN_REC_MAGISK := true
+
+# Including default addons into recovery ramdisk
+# Addon - Substratum Overlay (OMS -Normal- disabler)
+INC_IN_REC_ADDON_1 := true
+# Addon - Substratum Overlay (OMS -legacy- disabler)
+SHRP_SKIP_DEFAULT_ADDON_2 := true
+# Addon - Clear Fingerprint (remove fingerprint lock from system)
+INC_IN_REC_ADDON_3 := true
+# Addon - Force Encryption (remove force encryption from your device)
+INC_IN_REC_ADDON_4 := true
