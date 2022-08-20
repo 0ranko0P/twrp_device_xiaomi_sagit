@@ -6,11 +6,20 @@ Only compatible with Android 11 and newer
 
 ## To compile
 
-repo init --depth=1 -b twrp-12.1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
+repo init --depth=1 -b twrp-12.1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
 
 . build/envsetup.sh && lunch twrp_sagit-eng
 
 mka adbd recoveryimage
+
+### Special Notes for this branch
+- Device makefile in the device tree and dependencies file should use the "twrp" prefix.
+- Currently, decryption on 12.1 is a work in progress (WIP). Decryption is only fully functional (i.e. works with password/PIN/pattern) on legacy Pixel devices that use weaver but do not use wrappedkey. On other devices, decryption will only work if no password/PIN/pattern is set in Android.
+- FDE decryption is not presently supported in this branch.
+- In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
+
+    - [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
+    - [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
 
 ## Device specifications
 
